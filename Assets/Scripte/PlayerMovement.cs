@@ -17,7 +17,6 @@ public class PlayerMovement : MonoBehaviour {
         camRotation = Camera.main.transform.rotation;
         q = Camera.main.transform.eulerAngles;
         rotation = myCamera.transform.rotation.y;
-        Debug.print(q);
     }
 
     // Update is called once per frame
@@ -48,7 +47,6 @@ public class PlayerMovement : MonoBehaviour {
 
 
         if (Input.GetKey(KeyCode.Q))
-            Debug.print(q);
         Camera.main.transform.rotation.Set(camRotation.x, camRotation.y + rotate, camRotation.z, camRotation.w);
         if (Input.GetKey(KeyCode.E))
             rotation += rotate;
