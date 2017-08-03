@@ -46,26 +46,11 @@ public class PlayerMovement : MonoBehaviour {
             transform.position += Vector3.right * (Time.deltaTime * moveSpeed);
         }
 
-        /*if (Input.GetKey(KeyCode.W) && z < zMax)
-            z += move;
-        if (Input.GetKey(KeyCode.S) && z > zMin)
-            z -= move;
-        if (Input.GetKey(KeyCode.D) && x < xMax)
-            x += move;
-        if (Input.GetKey(KeyCode.A) && x > xMin)
-            x -= move;
-        v3.Set(x, y, z);*/
-
 
         if (Input.GetKey(KeyCode.Q))
             Debug.print(q);
         Camera.main.transform.rotation.Set(camRotation.x, camRotation.y + rotate, camRotation.z, camRotation.w);
         if (Input.GetKey(KeyCode.E))
             rotation += rotate;
-        
-        
-
-        //this.transform.rotation.Set(q.x, q.y, q.z, q.w);
-        //this.transform.SetPositionAndRotation(v3, q);
     }
 }
