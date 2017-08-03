@@ -19,7 +19,7 @@ public class MoneyManagement : MonoBehaviour {
         {
             time = 1;
             playerMoney += moneyPerSec;
-            PlayerMoneyAnzeige.curMoney.text = playerMoney.ToString();
+            //PlayerMoneyAnzeige.curMoney.text = playerMoney.ToString();
 
         }
 	}
