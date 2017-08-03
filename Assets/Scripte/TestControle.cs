@@ -17,10 +17,7 @@ public class TestControle : MonoBehaviour {
             screenPoint = Camera.main.WorldToScreenPoint(cubePosition);
             offset = cubePosition - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
             cubeScale = GetComponent<Renderer>().transform.localScale;
-        }
-        if (Input.GetKeyDown(KeyCode.Delete))
-        {
-            Destroy(this);
+            
         }
     }
     private void OnMouseUp()
@@ -45,6 +42,13 @@ public class TestControle : MonoBehaviour {
             curPosition.z += 0.5f;
         
         transform.position = curPosition;
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Destroy(gameObject);
+            Cursor.visible = true;
+        }
+
     }
 
     private void OnDestroy()
