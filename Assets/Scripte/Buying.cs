@@ -37,6 +37,27 @@ public class Buying : MonoBehaviour, IPointerDownHandler
             case "Buy3":
                 startScale = new Vector3(2, 2, 1);
                 break;
+            case "Buy4":
+                startScale = new Vector3(2, 3, 1);
+                break;
+            case "Buy5":
+                startScale = new Vector3(2, 3.5f, 2);
+                break;
+        }
+
+        if(startScale.x % 2 == 0)
+        {
+            if(startScale.z % 2 == 0)
+                startV = new Vector3(startScale.x + 0.5f, startScale.y / 2, startScale.z + 0.5f);
+            else
+                startV = new Vector3(startScale.x + 0.5f, startScale.y / 2, startScale.z);
+        }
+        else
+        {
+            if (startScale.z % 2 == 0)
+                startV = new Vector3(startScale.x, startScale.y / 2, startScale.z + 0.5f);
+            else
+                startV = new Vector3(startScale.x, startScale.y / 2, startScale.z);
         }
 
         Debug.print("ADD CUBE");
