@@ -9,7 +9,6 @@ public class PlayerMovement : MonoBehaviour {
     //float zMin = -7.0f, zMax = 1.0f, xMin = -3.5f, xMax = 4.5f;
     Camera myCamera;
     
-    
     // Use this for initialization
     void Start()
     {
@@ -22,7 +21,6 @@ public class PlayerMovement : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-
         x = this.transform.position.x;
         y = this.transform.position.y;
         z = this.transform.position.z;  
@@ -30,25 +28,25 @@ public class PlayerMovement : MonoBehaviour {
         if (Input.GetAxis("Mouse ScrollWheel") > 0 && y > yMin) transform.position += Vector3.down * (Time.deltaTime * zoom);
         if (Input.GetKey(KeyCode.W))
         {
-            transform.position += Vector3.forward * (Time.deltaTime * moveSpeed);
+            transform.position += transform.forward * (Time.deltaTime * moveSpeed);
         }
         if (Input.GetKey(KeyCode.S))
         {
-            transform.position += Vector3.back * (Time.deltaTime * moveSpeed);
+            transform.position += -transform.forward * (Time.deltaTime * moveSpeed);
         }
         if (Input.GetKey(KeyCode.A))
         {
-            transform.position += Vector3.left * (Time.deltaTime * moveSpeed);
+            transform.position += -transform.right * (Time.deltaTime * moveSpeed);
         }
         if (Input.GetKey(KeyCode.D))
         {
-            transform.position += Vector3.right * (Time.deltaTime * moveSpeed);
+            transform.position += transform.right * (Time.deltaTime * moveSpeed);
         }
 
-
         if (Input.GetKey(KeyCode.Q))
+            transform.Rotate(new Vector3(0, -10, 0) * moveSpeed * Time.deltaTime);
         Camera.main.transform.rotation.Set(camRotation.x, camRotation.y + rotate, camRotation.z, camRotation.w);
         if (Input.GetKey(KeyCode.E))
-            rotation += rotate;
+            transform.Rotate(new Vector3(0, 10, 0) * moveSpeed * Time.deltaTime);
     }
 }
