@@ -53,6 +53,5 @@ public class TestControle : MonoBehaviour {
 
     private void OnDestroy()
     {
-        Debug.print("Deleted!!");
     }
 }
