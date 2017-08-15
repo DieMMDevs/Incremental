@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
     Vector3 v3, q;
     Quaternion camRotation;
-    float x, y, z, rotation, yMax = 8, yMin = 3.5f, zoom = 10.0f, moveSpeed = 5.0f, rotate = 0.01f;
+    float x, y, z, /*rotation, */yMax = 8, yMin = 3.5f, zoom = 10.0f, moveSpeed = 5.0f, rotate = 0.01f;
     //float zMin = -7.0f, zMax = 1.0f, xMin = -3.5f, xMax = 4.5f;
     Camera myCamera;
     
@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour {
         //player = GetComponent<GameObject>();
         camRotation = Camera.main.transform.rotation;
         q = Camera.main.transform.eulerAngles;
-        rotation = myCamera.transform.rotation.y;
+        //rotation = myCamera.transform.rotation.y;
     }
 
     // Update is called once per frame

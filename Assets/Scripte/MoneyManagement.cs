@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class MoneyManagement : MonoBehaviour {
     public static double playerMoney, moneyPerSec = 0;
-    float time = 1;  
+    float time = 1;
+    public Text curMoney;
+
     
 	// Use this for initialization
 	void Start () {
@@ -19,7 +21,7 @@ public class MoneyManagement : MonoBehaviour {
         {
             time = 1;
             playerMoney += moneyPerSec;
-            //PlayerMoneyAnzeige.curMoney.text = playerMoney.ToString();
+            curMoney.text = playerMoney.ToString();
 
         }
 	}
